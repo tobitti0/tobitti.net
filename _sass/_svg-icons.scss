@@ -4,3 +4,13 @@
   font-size: 2rem;
   display: inline-block;
 }
+
+#contacts{
+  display: flex;
+  
+  a{
+    text-align: center;
+    display: block;
+    flex-grow: 1;
+  }
+}
