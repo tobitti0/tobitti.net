@@ -13,4 +13,10 @@
     display: block;
     flex-grow: 1;
   }
+  a{
+    color: $wineWhite;
+  }
+  a:hover{
+    color: $darkRed;
+  }
 }

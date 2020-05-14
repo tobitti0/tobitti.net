@@ -20,7 +20,7 @@ html {
 body {
 	background: $white;
   font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  color: $wineGray;
 }
 
 .container {
@@ -156,7 +156,7 @@ img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid $wineRed;
 
   @include mobile {
     text-align: center;
@@ -275,12 +275,14 @@ nav {
   margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  background-color: $wineRed;
 }
 
 footer {
-  padding: 20px 0;
-  text-align: center;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: $wineWhite;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
