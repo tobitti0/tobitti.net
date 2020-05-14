@@ -164,16 +164,10 @@ img {
 }
 
 .site-avatar {
-  float: left;
-  width: 70px;
-  height: 70px;
-  margin-right: 15px;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  display: block;
 
   img {
     border-radius: 5px;
@@ -181,13 +175,8 @@ img {
 }
 
 .site-info {
-  float: left;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
+  display: block;
+  margin: 0 auto;
 }
 
 .site-name {
@@ -211,29 +200,23 @@ img {
 }
 
 nav {
-  float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
+  margin-top: 10px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
   font-size: 18px;
+  display: block;
+  text-align: center;
 
   @include mobile {
-    float: none;
     margin-top: 9px;
-    display: block;
     font-size: 16px;
   }
 
   a {
-    margin-left: 20px;
     color: $darkGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
-
-    @include mobile {
-      margin: 0 10px;
-      color: $blue;
-    }
+    margin: 0 10px;
   }
 }
 
