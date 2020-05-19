@@ -247,6 +247,15 @@ nav {
     font-style: italic;
   }
 
+    .card > .card-img-top{
+      background: #E6E6E6;
+      height: 20vh;
+      object-fit: cover;
+        @include mobile {
+          height: 30vh;
+        }
+    }
+
   .comments {
     margin-top: 10px;
   }

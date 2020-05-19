@@ -10,13 +10,10 @@ layout: default
             <img src="{{ post.image }}" class="card-img-top" alt="">
             {% else %}
             <svg class="card-img-top" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-              y="0px" viewBox="268.5 178.3 330 220.3" style="enable-background:new 268.5 178.3 330 220.3;" xml:space="preserve">
+              y="0px" viewBox="268.5 178.3 330 220.3" xml:space="preserve">
             <style type="text/css">
-              .st0{fill:#E6E6E6;stroke:#DCDDDD;stroke-miterlimit:10;}
               .st1{fill:#9FA0A0;}
             </style>
-            <rect x="268.5" y="178.3" class="st0" width="330" height="220.3"/>
-            <polygon class="st0" points="268.5,398.7 598.5,398.7 598.5,178.3 "/>
             <g>
               <path class="st1" d="M374.5,301.2L366,288v13.2h-4.2v-21.5h3.7l8.5,13.2v-13.2h4.2v21.5H374.5z"/>
               <path class="st1" d="M397.8,299c-1.5,1.5-3.4,2.4-5.8,2.4c-2.4,0-4.3-0.8-5.8-2.4c-2.2-2.2-2.1-4.9-2.1-8.6s-0.1-6.4,2.1-8.6
@@ -37,7 +34,7 @@ layout: default
             {% endif %}
       <div class="card-body px-2 py-3">
               <h5 class="card-title">{{ post.title }}</h5>
-                <small class="card-text text-muted">{{ post.excerpt }}</small>
+                <small class="card-text text-muted">{{  post.content | strip_html | truncate: 25 }}</br></small>
                 <small class="card-text text-muted"><a href="{{ site.baseurl }}{{ post.url }}">Read More</a></small>
       </div><!-- /.card-body -->
     </div><!-- /.card -->
