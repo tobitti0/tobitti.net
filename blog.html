@@ -33,9 +33,10 @@ layout: default
             </svg>
             {% endif %}
       <div class="card-body px-2 py-3">
-              <h5 class="card-title">{{ post.title }}</h5>
-                <small class="card-text text-muted">{{  post.content | strip_html | truncate: 25 }}</br></small>
-                <small class="card-text text-muted"><a href="{{ site.baseurl }}{{ post.url }}">Read More</a></small>
+        <small class="card-text text-muted">{{  post.date | date : "%F" | strip_html}}</small>
+        <h5 class="card-title">{{ post.title }}</h5>
+        <small class="card-text text-muted">{{  post.content | strip_html | truncate: 25 }}</br></small>
+        <small class="card-text text-muted"><a href="{{ site.baseurl }}{{ post.url }}">Read More</a></small>
       </div><!-- /.card-body -->
     </div><!-- /.card -->
   </div><!-- /.col-sm-6.col-md-3 -->
