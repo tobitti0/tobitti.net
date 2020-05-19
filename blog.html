@@ -2,16 +2,14 @@
 layout: default
 ---
 
-<div class="posts">
+<div class="posts row">
   {% for post in site.posts %}
-    <article class="post">
-      <div class="card mb-3">
-        <div class="row no-gutters">
-          <div class="col-md-4">
+      <div class="post col-sm-6 col-md-4">
+        <div class="card">
             {% if post.image %}
-            <img src="{{ post.image }}" class="card-img" alt="">
+            <img src="{{ post.image }}" class="card-img-top" alt="">
             {% else %}
-            <svg class="card-img" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+            <svg class="card-img-top" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
               y="0px" viewBox="268.5 178.3 330 220.3" style="enable-background:new 268.5 178.3 330 220.3;" xml:space="preserve">
             <style type="text/css">
               .st0{fill:#E6E6E6;stroke:#DCDDDD;stroke-miterlimit:10;}
@@ -37,16 +35,12 @@ layout: default
             </g>
             </svg>
             {% endif %}
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
+      <div class="card-body px-2 py-3">
               <h5 class="card-title">{{ post.title }}</h5>
                 <small class="card-text text-muted">{{ post.excerpt }}</small>
                 <small class="card-text text-muted"><a href="{{ site.baseurl }}{{ post.url }}">Read More</a></small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
+      </div><!-- /.card-body -->
+    </div><!-- /.card -->
+  </div><!-- /.col-sm-6.col-md-3 -->
   {% endfor %}
 </div>
