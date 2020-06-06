@@ -426,7 +426,7 @@ process.on('SIGINT', () => {
 ````
 {
     "name": "jls",
-    "cmd": "%NODE% %ROOT%/config/join_logo_scp.js",
+    "cmd": "%NODE% %ROOT%/config/jlse.js",
     "suffix": ".mp4",
     "default": true
 }
