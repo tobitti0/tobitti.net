@@ -2,6 +2,7 @@
 layout: post
 title: UbuntuでEPGStationとJoinLogoScpTrialをつかってCMカットする。
 ---
+## はじめに
 Linux環境で動作するすばらしいTV録画システムは多くある。  
 私は以前WindowsでEDCBを用いてTVを録画していた。  
 しかしながら、社会人となるにあたって研修などで自宅を離れることが予定されていた。   
@@ -33,6 +34,7 @@ Windows環境ではJoinLogoScpTrialという素晴らしいCMカットツール�
 もし、Linux環境でCMカットしたいという人がいれば参考にしていただければ幸いである。   
 ただし、私の利用しているDockerを用いた環境であるため、直接導入している人は異なると思われるので、参考に頑張ってもらいたい。    
 
+## EPGStationのDockerにJoinLogoScpTrialSetLinuxの導入
 どうでもいい前置きが長くなったが、導入手順を記載していく。  
 とりあえず、<a href="https://github.com/l3tnun/docker-mirakurun-epgstation" target="_blank">docker-mirakurun-epgstation</a>を動作できるようにしておく。  
 
@@ -341,6 +343,8 @@ cp -r epgstation/JoinLogoScpTrialSetLinux/modules/join_logo_scp_trial/src join_l
 ここまでできたら`docker-compose up -d --build`でビルドする。  
 FFmpegとその他をビルドするのでかなり時間がかかりますがゆっくり待ちましょう。   
 ビルドできたらjoin_logo_scp_trialにlogoフォルダができてるのでロゴデータを入れておく。
+
+## エンコードスクリプトの設定　 
 次に`docker-mirakurun-epgstation/epgstation/config`にjlse.jsを作成する。中身は次の通り。
 
 ```` javascript
@@ -435,15 +439,14 @@ process.on('SIGINT', () => {
 
 注意としてはFFmpegが4.2以上になるため、現在のEPGStationでは字幕が動作しない。  
 詳しい方、字幕をうまく調整してEPGStationにぜひ投げてほしい。（私は詳しくないので無理…）   
-あと、現在のJoinLogoScpTrialSetLinuxには保存先ディレクトリを変更する機能を有していないので、EPGStationでエンコードファイルの保存先を変更している場合は問題が発生すると思われる。  
-時間があれば対応します。たぶん。。。
-
-雑ですがとりあえず一通り導入方法を記載した。  
 jlsの設定などはwindowsとかわらないのでwindowsの記事を参考に設定すれば問題ないはず。
 jlsの設定ファイルなどは`docker-mirakurun-epgstation/join_logo_scp_trial/`の中をいじってください。   
 
+## おわりに
+雑ですがとりあえず一通り導入方法を記載した。  
 導入方法に万一問題があればTwitterまで。  
 移植版に問題があればGitHubのissueに。    
 現状私が使用できているので、問題なく使用できるはずですが、暇があれば問題には対応します。たぶん。。。
 
-最後に、EPGStationやJoinLogoScpTrialなどを制作された様々な偉大なる先人達に感謝いたします。
+## 謝辞
+EPGStationやJoinLogoScpTrialなどを制作された様々な偉大なる先人達に感謝いたします。
