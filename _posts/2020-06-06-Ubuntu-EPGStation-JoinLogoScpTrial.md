@@ -362,8 +362,9 @@ const crf = 23;
 
 const args = ['-y', '-analyzeduration', analyzedurationSize, '-probesize', probesizeSize];
 
-const fs = require('fs');
+const path = require('path');
 const output_name = path.basename(output, path.extname(output));
+const output_dir = path.dirname(output);
 
 // dual mono 設定
 if (isDualMono) {
@@ -402,7 +403,7 @@ for (let i of args) {
 }
 console.error(str);
 
-const jlse_args = ['-i', input, '-e', '-o', str,'-r', '-n', output_name];
+const jlse_args = ['-i', input, '-e', '-o', str,'-r', '-d', output_dir, '-n', output_name];
 console.error(jlse_args);
 
 var env = Object.create( process.env );
@@ -420,7 +421,6 @@ child.on('error', (err) => {
 process.on('SIGINT', () => {
     child.kill('SIGINT');
 });
-
 ````
 `docker-mirakurun-epgstation/epgstation/config/config.json`のencodeには次を追記する。
 ````
