@@ -4,12 +4,16 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+### Profile
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
-
-[email](mailto:mail+git@tobitti.net)
+本サイトの運営はtobitti0が行っています。  
+各アカウントはサイト下部のアイコンから飛ぶことができます。  
+一般的な四年生大学を卒業し、就職しました。  
+趣味は映画、アニメ鑑賞で映画は上映期間中に同じ作品を数度見ることもあります。  
+また、小学時代からPCやプログラミングに興味があり、現在も趣味としてプログラムを書くことがあります。  
+高校初期頃からアニメを録画し、見ることをPCで行うことをしていました。  
+しかしながら、既製品のTVチューナーでは編集の制限や一般の視聴ソフトが使えないことなどを不便に感じ、PT3を購入しDTVの世界に入りました。  
+長くWindowsでTV環境を構築し、録画、CMカット、ロゴ消しとやっていましたが、就職を期にLinuxでのTV環境に乗り換えました。  
+近年ではJoinLogoScpTrialをLinuxで動作できるように移植し、Linuxの環境でもWindows時代と変わらない快適なDTVライフを送っています。  
+今後も必要に応じ開発や、改善を行っていきたいと思っており、本サイトはその忘備録を兼ねています。  
+閲覧された方の役に立つかどうかは微妙なところがあるかと思いますが、参考になることがありましたが幸いです。
