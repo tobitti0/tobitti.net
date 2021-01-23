@@ -1,6 +1,7 @@
 ---
 layout: post
 title: UbuntuのEPGStation_v2でCMカットエンコードする。
+image: /images/2021-01/23/2020-01-23.png
 ---
 ## はじめに
 EPGStation v2が先日公開された。  
