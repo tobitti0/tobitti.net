@@ -2,6 +2,12 @@
 layout: post
 title: UbuntuでEPGStationとJoinLogoScpTrialをつかってCMカットする。
 ---
+## この記事は古いです
+この記事はEPGSstation v1の頃に作成されました。  
+EPGStation v2の記事がすでにありますので、そちらを読まれることをおすすめします。
+
+[UbuntuのEPGStation_v2でCMカットエンコードする。](https://tobitti.net/blog/Ubuntu-EPGStation_v2-JoinLogoScpTrial/)
+
 ## はじめに
 Linux環境で動作するすばらしいTV録画システムは多くある。  
 私は以前WindowsでEDCBを用いてTVを録画していた。  
