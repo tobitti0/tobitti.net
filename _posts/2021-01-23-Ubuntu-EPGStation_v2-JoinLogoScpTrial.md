@@ -4,19 +4,18 @@ title: UbuntuのEPGStation_v2でCMカットエンコードする。
 image: /images/2021-01/23/2020-01-23.png
 ---
 ## はじめに
-EPGStation v2が先日公開された。  
-EPGSstationのおかげでTVをいつでもどこからでも視聴できる上、気が向いたときに録画予約を入れる事ができ大変便利である。  
-私はEPGSstation v2が公開された日にアップグレードした。  
-すると、エンコード進捗を表示できる機能が新たに実装されており、感動した。  
-そこで私の移植したLinuxで動くJoinLogoScpTrialSetLinuxを用いてエンコード進捗を表示できるようにした。下記のように表示される。
+Linux環境でCMカットを自動で行うためのjoin logo scpを移植してしばらくたったある日、EPGStation v2が公開された。  
+EPGStationのおかげでTVをいつでもどこからでも視聴できる上、気が向いたときに録画予約を入れる事ができ大変便利である。  
+V2ではエンコード進捗を表示できる機能が新たに実装されており、感動した。  
+そこで私の移植したLinuxで動くJoinLogoScpTrialSetLinuxでエンコード進捗を表示できるようにした。  
+下記のように表示される。
+<blockquote class="twitter-tweet" data-conversation="none" data-theme="white"><p lang="ja" dir="ltr">EPGStation v2のエンコード進捗にてjoin logo scp trial linuxの進捗をとりあえず満足いく感じにすることができた。<br>来週末くらいにはGitHubの連携例を更新しようかな。 <a href="https://t.co/joTnUcCTJ8">pic.twitter.com/joTnUcCTJ8</a></p>&mdash; tobitti0 (@tobitti0) <a href="https://twitter.com/tobitti0/status/1350809160963690501?ref_src=twsrc%5Etfw">January 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet" data-conversation="none" data-theme="dark"><p lang="ja" dir="ltr">EPGStation v2のエンコード進捗にてjoin logo scp trial linuxの進捗をとりあえず満足いく感じにすることができた。<br>来週末くらいにはGitHubの連携例を更新しようかな。 <a href="https://t.co/joTnUcCTJ8">pic.twitter.com/joTnUcCTJ8</a></p>&mdash; tobitti0 (@tobitti0) <a href="https://twitter.com/tobitti0/status/1350809160963690501?ref_src=twsrc%5Etfw">January 17, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-そこで、環境構築情報をここに記しておく。  
+そこで、V2での環境構築情報をここに記しておく。  
 （というか自分用のメモだが。）  
 もし、Linux環境にてEPGStation v2でCMカットしたいという人がいれば参考にしていただければ幸いである。   
-ただし、私の利用しているのはDockerを用いた環境であるため、直接導入している人は異なると思われるので、参考に頑張ってもらいたい。    
+ただし、私が利用しているのはDockerを用いた環境であるため、今回はDockerを用いた環境での導入方法を説明する。  
+直接導入している人は一部異なると思われるので、本記事を参考に頑張ってもらいたい。    
 
 ## EPGStationのDockerにJoinLogoScpTrialSetLinuxの導入
 どうでもいい前置きが長くなったが、導入手順を記載していく。  
@@ -69,7 +68,22 @@ encode:
       suffix: .mp4
       rate: 4.0
 ````
-これでエンコードのところにjlsの選択が現れるので、選択しエンコードすれば問題なく利用できると思う。   
+
+
+**-----2021/05/16追記-----**  
+EPGStationのConfig.templateにて設定されている録画ファイルの形式がデフォルトでは`m2ts`拡張子となった。  
+[EPGStation #398](https://github.com/l3tnun/EPGStation/pull/398)  
+しかしながら本ツールは`ts`でしか動作を確認しておらず、ARIBの規格的にも`ts`が正しいと私は考えている。  
+そのため、本ツールを使用する場合は録画ファイルを`ts`にして頂く必要がある。  
+`docker-mirakurun-epgstation/epgstation/config/config.json`内にある`recordedFileExtension`の項目を`.ts`に変更する。  
+(変更例)
+````
+recordedFileExtension: .ts
+````
+**-----2021/05/16追記終-----**  
+
+
+これでエンコードのところに`jlse`の選択が現れるので、選択しエンコードすれば問題なく利用できると思う。   
 進捗も表示されるはずだ。
 
 注意としては以前からJoinLogoScpTrialSetLinuxを利用していた場合は`docker-mirakurun-epgstation/join_logo_scp_trial`の中身を最新のものにしなければ、進捗は表示されない。  
